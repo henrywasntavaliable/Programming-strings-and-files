@@ -1,0 +1,73 @@
+node_id,yes_id,no_id,description,question,yes_text,no_text
+0,1,2,Start,Is M. X in his office?,Yes,No
+1,3,-1,Knock on the door,Does he look up?,Yes,No
+2,4,-1,Hang around,Is Miss Y in her office?,Yes,No
+3,5,6,Enter,Is he in a good mood?,Yes,No
+4,7,-1,Have a chat with Miss Y,Can you see Mr X?,Yes,No
+5,8,9,Relax,Does he ask you to be seated?,Yes,No
+6,10,11,Take a walk around the lab,Make a rapid exit?,Yes,No
+7,3,-1,Return from Miss Y,Can you see Mr X now?,Yes,No
+8,12,13,Explain the problem,Is his face spotty?,Yes,No
+9,14,15,Are you told to come back at 2:30?,Is today Friday?,Yes,No
+10,16,-1,Make a rapid exit,Enough's enough?,Yes,No
+11,17,-1,Wait 40 days,Is he now OK?,Yes,No
+12,18,19,Emergency,Ask if one of his daughters has measles?,Yes,No
+13,20,21,Proceed normally,Ask if both his daughters have measles?,Yes,No
+14,22,23,Wait for 2:30,Go back to your desk to study Friday?,Yes,No
+15,24,25,Is today Monday?,Is it Lent?,Yes,No
+16,-1,-1,Enough's enough,END,,
+17,3,-1,After 40 days,Return to Mr X?,Yes,No
+18,26,27,Spots noticed,Make rapid exit?,Yes,No
+19,28,-1,No spots,Ask if his three daughters have measles?,Yes,No
+20,29,30,Follow-up,Ask if his face is spotty?,Yes,No
+21,31,-1,No measles,Go to the relevant office?,Yes,No
+22,32,-1,Study Friday,Was fish on?,Yes,No
+23,33,-1,Don't study Friday,Wait until tomorrow?,Yes,No
+24,34,35,Lent?,Was fish on?,Yes,No
+25,36,37,Not Monday,Eggs?,Yes,No
+26,38,-1,Emergency,Put Mr X in quarantine for 40 days!,Do it,
+27,39,-1,No emergency,Go from office to office?,Yes,No
+28,26,-1,Three daughters measles,Emergency?,Yes,No
+29,18,-1,Face is spotty,Emergency?,Yes,No
+30,40,-1,Face not spotty,Does he consider your question intelligent?,Yes,No
+31,41,-1,Go to relevant office,From office to office?,Yes,No
+32,42,43,Fish on Friday,Were they oysters?,Yes,No
+33,44,-1,Wait until tomorrow,Return to your desk?,Yes,No
+34,45,-1,Lent with fish,Were they oysters?,Yes,No
+35,46,-1,Not Lent,Were they oysters?,Yes,No
+36,47,-1,Eggs Monday,Is there another competent department?,Yes,No
+37,48,-1,No eggs,Is it a 'no'?,Yes,No
+38,-1,-1,Put Mr X in quarantine for 40 days,END,,
+39,41,-1,Bureaucratic loop,From office to office?,Yes,No
+40,49,50,He considers it intelligent,Does he have time to deal with it?,Yes,No
+41,51,-1,Office loop,Return to your desk?,Yes,No
+42,52,-1,They were oysters,Does it offer congratulations?,Yes,No
+43,53,-1,They were not oysters,Do you get on with the professor?,Yes,No
+44,-1,-1,Return to your desk,END,,
+45,52,-1,Fish on Friday (Lent),Does it offer congratulations?,Yes,No
+46,54,-1,No fish (not Lent),Is it a question of increment?,Yes,No
+47,55,-1,Another competent department,Go to it?,Yes,No
+48,56,-1,It is a 'no',Interested in your case?,Yes,No
+49,57,-1,Has time to deal with it,Has it really understood?,Yes,No
+50,58,-1,No time,Does it consider your question to be an intelligent one?,Yes,No
+51,44,-1,Return to your desk,Ponder your next problem?,Yes,No
+52,44,-1,Offers congratulations,Return to your desk,OK,
+53,59,-1,Get on with professor?,Have you recently been involved in a major success?,Yes,No
+54,60,-1,Question of increment,Do you get on with the professor?,Yes,No
+55,31,-1,Go to other dept,From office to office?,Yes,No
+56,61,-1,Not interested in your case,Put M. X in quarantine for 40 days?,Yes,No
+57,62,-1,Understood,Does it have time to deal with it?,Yes,No
+58,63,-1,Considers it intelligent,Has it really understood?,Yes,No
+59,64,-1,Major success,Ask for an increment?,Yes,No
+60,65,-1,Ask for increment,Do you give reasons for hoping?,Yes,No
+61,38,-1,Quarantine suggestion,Emergency path,Yes,No
+62,66,-1,Has time,Is there another competent department?,Yes,No
+63,67,-1,Not understood,Does it have three daughters with measles?,Yes,No
+64,-1,-1,Ask for an increment,END,,
+65,68,-1,Give reasons for hoping,Do you get on with the professor?,Yes,No
+66,47,-1,Another competent department?,Go to it,Yes,No
+67,26,-1,Three daughters with measles,Emergency,Yes,No
+68,69,70,Get on with the professor?,Have you been given reasons for hoping?,Yes,No
+69,-1,-1,Wait six months,END,,
+70,71,-1,No reasons for hoping,Wait until tomorrow?,Yes,No
+71,-1,-1,Ponder your next problem,END,,
