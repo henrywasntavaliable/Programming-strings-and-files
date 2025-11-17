@@ -1,0 +1,143 @@
+#filename = "perec_map_full.csv"
+#def load_map(filename):
+#    map_list = [] 
+#    with open(filename, 'r', encoding='utf-8') as f:
+#        header = f.readline()  # Skip header line
+#
+ #       for line in f:
+  #          line = line.strip() 
+   #         if line == '': continue  # Skip empty lines
+    #        parts = line.split(",")
+     #       node_id = int(parts[0])
+      #      yes_id = int(parts[1])
+       #     no_id = int(parts[2])
+        #    description = parts[3]
+         #   question = parts[4]
+          #  yes_text = parts[5]
+           # no_text = parts[6]
+#
+ #           node = node_id, yes_id, no_id, description, question, yes_text, no_text
+  #          map_list.append(node)
+   #         
+    #return map_list
+#
+#def find_node_by_id(map_list, target_id):
+  #  for node in map_list:
+   #     if node [0] == target_id:
+    #        return node
+     #   return None
+#
+#def navigate(map_list):
+ #   current_id = 0  # Start at node ID 0 
+  #  while True:
+   #     current_node = find_node_by_id(map_list, current_id)  # Start at node ID 0
+    #    if current_node is None:
+     #       print("Starting node not found.")
+      #      break
+       # node_id = current_node[0]
+        #yes_id = current_node[1]
+        #no_id = current_node[2]
+        #description = current_node[3]
+        #question = current_node[4]
+        #yes_text = current_node[5]
+        #no_text = current_node[6]
+        #print("\n-----------------------------")
+        #print("Description:", description)
+        #print("Question:", question)
+        #print("1:", yes_text)
+        #print("2:", no_text)
+        #choice = input("Enter 1 or 2").strip()
+        #if choice == '1':
+        #    next_id = yes_id
+        #elif choice == '2':
+         #   next_id = no_id
+        #else: 
+         #   print("Invalid choice. Please enter 1 or 2.")
+          #  continue
+        #if next_id == -1:
+         #   print("reached an ed mode, navigaion complete.")
+          #  break 
+        #current_id = next_id 
+#def main():
+ #   perec_map = load_map(filename)
+  #  navigate(perec_map)
+   # if __name__ == "__main__":
+    #    main()
+
+        
+        
+#load_map(filename)
+
+
+filename = "perec_map_full.csv"
+
+def load_map(filename):
+    map_list = []
+    with open(filename, 'r', encoding='utf-8') as f:
+        header = f.readline()  # Skip header line
+        for line in f:
+            line = line.strip()
+            if line == '':
+                continue  # Skip empty lines
+            parts = line.split(",")
+            # Optionally guard against short lines
+            if len(parts) < 7:
+                continue
+            node_id = int(parts[0])
+            yes_id = int(parts[1])
+            no_id = int(parts[2])
+            description = parts[3]
+            question = parts[4]
+            yes_text = parts[5]
+            no_text = parts[6]
+            node = (node_id, yes_id, no_id, description, question, yes_text, no_text)
+            map_list.append(node)
+    return map_list
+
+def find_node_by_id(map_list, target_id):
+    for node in map_list:
+        if node[0] == target_id:
+            return node
+    return None  # <-- this must be AFTER the loop
+
+def navigate(map_list):
+    current_id = 0  # Start at node ID 0
+    while True:
+        current_node = find_node_by_id(map_list, current_id)
+        if current_node is None:
+            print(f"Node {current_id} not found. Stopping.")
+            break
+
+        node_id, yes_id, no_id, description, question, yes_text, no_text = current_node
+
+        print("\n-----------------------------")
+        print("Description:", description)
+        print("Question:", question)
+        print("1:", yes_text)
+        print("2:", no_text)
+
+        choice = input("Enter 1 or 2: ").strip()
+        if choice == '1':
+            next_id = yes_id
+        elif choice == '2':
+            next_id = no_id
+        else:
+            print("Invalid choice. Please enter 1 or 2.")
+            continue
+
+        if next_id == -1:
+            print("Reached an end node. Navigation complete.")
+            break
+
+        current_id = next_id
+
+def main():
+    perec_map = load_map(filename)
+    if not perec_map:
+        print("No nodes loaded. Check your CSV.")
+        return
+    navigate(perec_map)
+
+# <-- put the guard at top level (no indentation)
+if __name__ == "__main__":
+    main()
